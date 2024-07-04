@@ -23,15 +23,29 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);
     justify-content: space-evenly;
-    /* background-color: MediumAquamarine; */
     grid-gap: 1em;
   }
 
 .card {
-    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffc93c;
     width: 350px;
     height: 400px;
     margin: 0.5em 0;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.05);
 }
+
+  .card .title {
+    margin-top: 5em;
+  }
+
+  .card .author {
+    font-style: italic;
+  }
+
+  .card .pages {
+    margin-top: auto;
+    margin-bottom: 5em;
+  }
