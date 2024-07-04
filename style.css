@@ -17,6 +17,7 @@ h1 {
     border: none;
     color: white;
     padding: 0.8em 2em;
+    cursor: pointer;
   }
 
 main {

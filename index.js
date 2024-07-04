@@ -14,6 +14,25 @@ function Book(title, author, pages) {
     };
 }
 
+const modal = document.querySelector("#modal");
+const openModal = document.querySelector(".open-button");
+openModal.addEventListener("click", () => {
+    modal.showModal();
+});
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    // event.preventDefault();
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+
+    const newBook = new Book(title, author, parseInt(pages, 10));
+    library.push(newBook);
+    console.log(library);
+    this.reset();
+    updateDisplay();
+});
+
 function updateDisplay() {
     const cardContainer = document.querySelector("main");
 
@@ -28,7 +47,7 @@ function updateDisplay() {
         const author = document.createElement("p");
         author.classList.add("author");
         author.textContent = book.author;
-    
+
         const pages = document.createElement("p");
         pages.classList.add("pages");
         pages.textContent = book.pages;

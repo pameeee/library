@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Library</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Library</h1>
-    <button class="open-button">+ Add book</button>
-    <main>
-        <!-- <div class="card">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Library</h1>
+  <button class="open-button">+ Add book</button>
+  <dialog id="modal">
+    <p>Add new book</p>
+    <form id="form" method="dialog">
+      <ul>
+        <li>
+          <label for="title">Book title:</label>
+          <input type="text" required name="title" id="title">
+        </li>
+        <li>
+          <label for="author">Author:</label>
+          <input type="text" required name="author" id="author">
+        </li>
+        <li>
+          <label for="pages">Pages:</label>
+          <input type="number" required name="pages" id="pages">
+        </li>
+        <button type="submit" class="submit-book">Submit</button>
+        <button type="button" class="close-button">X</button>
+      </ul>
+    </form>
+  </dialog>
+  <main>
+    <!-- <div class="card">
             <p class="title">AAA</p>
             <p class="author">Author A</p>
             <p class="pages">1 page</p>
@@ -29,7 +52,8 @@
             <p class="author">Author E</p>
             <p class="pages">5 pages</p>
         </div> -->
-    </main>
-	<script src="index.js"></script>
-  </body>
+  </main>
+  <script src="index.js"></script>
+</body>
+
 </html>
