@@ -48,5 +48,9 @@ main {
 
   .card .pages {
     margin-top: auto;
-    margin-bottom: 5em;
+    margin-bottom: 1em;
+  }
+
+  .readButton.unread {
+    background-color: red;
   }

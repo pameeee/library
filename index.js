@@ -34,7 +34,10 @@ document.querySelector("form").addEventListener("submit", function (event) {
 });
 
 function updateDisplay() {
+
     const cardContainer = document.querySelector("main");
+    const cards = cardContainer.querySelectorAll(".card");
+    cards.forEach((card) => card.remove());
 
     library.forEach((book, index) => {
         const card = document.createElement("div");
@@ -52,11 +55,34 @@ function updateDisplay() {
         pages.classList.add("pages");
         pages.textContent = book.pages;
 
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "X";
+
+        const readCard = document.createElement("button");
+        readCard.textContent = "Read ✅";
+        readCard.classList.add("readButton");
+        if (!book.read) {
+            readCard.classList.add("unread");
+            readCard.textContent = "Not read";
+        }
+
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
+        card.appendChild(removeButton);
+        card.appendChild(readCard);
 
         cardContainer.appendChild(card);
+
+        removeButton.addEventListener("click", function () {
+            library.splice(index, 1);
+            updateDisplay();
+        });
+
+        readCard.addEventListener("click", function () {
+            book.toggleReadStatus();
+            updateDisplay();
+        });
     });
 }
 
