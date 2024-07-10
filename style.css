@@ -1,7 +1,7 @@
 * {
     /* border: 1px black solid; */
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
 }
 
 h1 {
@@ -51,6 +51,26 @@ main {
     margin-bottom: 1em;
   }
 
-  .readButton.unread {
-    background-color: red;
+  .buttonContainer {
+    display: flex;
   }
+
+  .buttonContainer > * {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #155263;
+    border: none;
+    color: white;
+    padding: 0.2em;
+    border-radius: 5%;
+  }
+
+  .readButton.unread {
+    background-color: transparent;
+    border: 1px solid #155263;
+    color: #155263;
+  }
+
+#modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}

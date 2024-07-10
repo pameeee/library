@@ -43,6 +43,10 @@ function updateDisplay() {
         const card = document.createElement("div");
         card.classList.add("card");
 
+        // New
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("buttonContainer");
+
         const title = document.createElement("p");
         title.classList.add("title");
         title.textContent = book.title;
@@ -56,21 +60,23 @@ function updateDisplay() {
         pages.textContent = book.pages;
 
         const removeButton = document.createElement("button");
+        removeButton.classList.add("removeButton");
         removeButton.textContent = "X";
 
-        const readCard = document.createElement("button");
-        readCard.textContent = "Read ✅";
-        readCard.classList.add("readButton");
+        const readBtn = document.createElement("button");
+        readBtn.textContent = "Read ✅";
+        readBtn.classList.add("readButton");
         if (!book.read) {
-            readCard.classList.add("unread");
-            readCard.textContent = "Not read";
+            readBtn.classList.add("unread");
+            readBtn.textContent = "Not read";
         }
 
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
-        card.appendChild(removeButton);
-        card.appendChild(readCard);
+        buttonContainer.appendChild(removeButton);
+        buttonContainer.appendChild(readBtn);
+        card.appendChild(buttonContainer);
 
         cardContainer.appendChild(card);
 
@@ -79,7 +85,7 @@ function updateDisplay() {
             updateDisplay();
         });
 
-        readCard.addEventListener("click", function () {
+        readBtn.addEventListener("click", function () {
             book.toggleReadStatus();
             updateDisplay();
         });
