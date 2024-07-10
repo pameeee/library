@@ -16,9 +16,15 @@ function Book(title, author, pages) {
 
 const modal = document.querySelector("#modal");
 const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+
 openModal.addEventListener("click", () => {
     modal.showModal();
 });
+
+closeModal.addEventListener("click", function (event) {
+    modal.close();
+  });
 
 document.querySelector("form").addEventListener("submit", function (event) {
     // event.preventDefault();
